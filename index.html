@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#f5f7fb" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <title>具身智能 · 每日快讯</title>
+  <style>
+    :root{--ink:#182230;--muted:#768196;--line:#e7ebf1;--blue:#3678f4;--blue2:#eaf1ff;--bg:#f5f7fb;--card:#fff;--green:#1e9b71}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+    .app{max-width:560px;margin:0 auto;min-height:100vh;padding:24px 18px 34px}
+    .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.eyebrow{font-size:12px;letter-spacing:.08em;color:var(--blue);font-weight:700}.top h1{margin:6px 0 0;font-size:25px;line-height:1.2;letter-spacing:-.03em}.bell{width:42px;height:42px;border:1px solid var(--line);background:#fff;border-radius:14px;font-size:20px;box-shadow:0 5px 18px #1822300b}
+    .hero{background:linear-gradient(135deg,#1e4fc4,#4e86ff);border-radius:24px;padding:22px;color:#fff;box-shadow:0 12px 30px #2c60d633}.hero .label{opacity:.78;font-size:12px}.hero h2{font-size:22px;line-height:1.35;margin:8px 0 14px}.hero .meta{font-size:13px;opacity:.86}.hero-actions{display:flex;gap:10px;margin-top:18px}.primary,.secondary{border:0;border-radius:12px;padding:11px 14px;font-weight:700;font-size:14px;cursor:pointer}.primary{background:#fff;color:#2358c6}.secondary{background:#ffffff22;color:#fff;border:1px solid #ffffff55}
+    .section{display:flex;align-items:center;justify-content:space-between;margin:26px 2px 12px}.section h3{margin:0;font-size:16px}.section span{font-size:12px;color:var(--muted)}
+    .story{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin:10px 0;box-shadow:0 5px 18px #18223006}.story .tag{display:inline-block;padding:5px 8px;border-radius:7px;background:var(--blue2);color:var(--blue);font-size:11px;font-weight:700}.story h4{font-size:16px;line-height:1.45;margin:10px 0 7px}.story h4 a{color:inherit;text-decoration:none}.story h4 a:hover{color:var(--blue)}.story p{font-size:13px;line-height:1.7;color:#59657a;margin:0}.story .source{display:flex;justify-content:space-between;margin-top:11px;font-size:11px;color:var(--muted)}.story .source a{color:var(--blue);text-decoration:none}
+    .quick{display:grid;grid-template-columns:1fr 1fr;gap:10px}.quick button{padding:14px;background:#fff;border:1px solid var(--line);border-radius:15px;text-align:left;font-size:13px;color:var(--ink);cursor:pointer}.quick b{display:block;font-size:16px;margin-bottom:5px}.quick small{color:var(--muted)}
+    .history{display:none}.history.open{display:block}.history-item{display:flex;justify-content:space-between;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;margin:9px 0;cursor:pointer}.history-item strong{font-size:14px}.history-item span{font-size:12px;color:var(--muted)}
+    .detail{display:none;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;margin-top:12px}.detail.open{display:block}.detail h4{margin:0 0 8px;font-size:17px}.detail p{margin:0;color:#59657a;font-size:13px;line-height:1.75}.detail a{display:inline-block;margin-top:14px;color:var(--blue);font-size:13px;text-decoration:none}.close{float:right;border:0;background:var(--blue2);color:var(--blue);border-radius:8px;padding:5px 8px;cursor:pointer}
+    .detail h5{font-size:14px;margin:15px 0 5px;color:var(--ink)}
+    .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;background:#192335;color:#fff;border-radius:999px;padding:11px 16px;font-size:13px;transition:.25s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(min-width:700px){.app{padding-top:46px}}
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header class="top"><div><div class="eyebrow">DAILY BRIEF · 09:00</div><h1>具身智能行业快讯</h1></div><button class="bell" id="notify" aria-label="开启每日提醒">🔔</button></header>
+    <section class="hero"><div class="label">2026年10月13日 · 星期二</div><h2>工业具身智能，正在从单机模型走向真实工厂。</h2><div class="meta">今日精选 5 条 · 阅读约 3 分钟</div><div class="hero-actions"><button class="primary" id="readBtn">立即阅读</button><button class="secondary" id="shareBtn">分享快讯</button></div></section>
+    <div class="section"><h3>今日精选</h3><span>更新于 09:00</span></div>
+    <article class="story"><span class="tag">工业场景</span><h4><a href="https://www.gongkong.com/news/202610/453774.html" target="_blank" rel="noopener">西门子在中国 5 家工厂开放 6 类具身智能场景 ↗</a></h4><p>覆盖无序分拣、拆码垛、螺丝拧紧、柔性包装等，真实产线验证成为今日重点。</p><div class="source"><span>西门子 · 10月12日</span><a href="https://www.gongkong.com/news/202610/453774.html" target="_blank" rel="noopener">原始报道</a></div></article>
+    <article class="story"><span class="tag">平台模型</span><h4><a href="https://www.gongkong.com/news/202610/453754.html" target="_blank" rel="noopener">库卡发布“开天 KAI”，打通工业 Agent 与跨本体模型 ↗</a></h4><p>同一套技能覆盖协作机器人、复合机器人、轮式双臂和双足人形。</p><div class="source"><span>KUKA · 10月12日</span><a href="https://www.gongkong.com/news/202610/453754.html" target="_blank" rel="noopener">原始报道</a></div></article>
+    <article class="story"><span class="tag">触觉与数据</span><h4><a href="https://www.prnasia.com/lightnews/lightnews-1-77-99942.shtml" target="_blank" rel="noopener">钧舵推出视觉、触觉、末端执行与采集平台矩阵 ↗</a></h4><p>触觉传感与数据采集正在成为具身智能落地的关键基础设施。</p><div class="source"><span>钧舵机器人 · 10月12日</span><a href="https://www.prnasia.com/lightnews/lightnews-1-77-99942.shtml" target="_blank" rel="noopener">原始报道</a></div></article>
+    <article class="story"><span class="tag">技术进展</span><h4>今日技术进展</h4><p>跨本体具身模型、工业 Agent 协同、视觉—触觉融合成为主要路线，真实工厂数据闭环速度加快。</p></article>
+    <article class="story"><span class="tag">智能制造与工业应用</span><h4>从单点演示走向整线协同</h4><p>分拣、拆码垛、质检、拧紧、包装等环节正在被纳入统一调度，柔性产线成为最清晰的落地场景。</p></article>
+    <article class="story"><span class="tag">企业与政策动态</span><h4>头部厂商加速发布平台与标准</h4><p>企业集中披露平台化产品，行业标准和智能工厂建模规范同步推进。</p></article>
+    <article class="story"><span class="tag">对工业分拣产品的启示</span><h4>优先补齐“感知—执行—调度”闭环</h4><p>建议重点评估无序来料识别、末端触觉、异常恢复、节拍稳定性，以及与 MES/WMS 的接口能力。</p></article>
+    <article class="story"><span class="tag">建议持续跟踪</span><h4>跟踪真实部署指标</h4><p>持续关注交付周期、连续运行时间、换型成本、单箱节拍和规模化复制案例。</p></article>
+    <div class="section"><h3>快捷入口</h3><span>一键直达</span></div>
+    <div class="quick"><button id="history"><b>📚 历史快讯</b><small>查看往期内容</small></button><button id="settings"><b>⚙️ 提醒设置</b><small>每天 09:00 推送</small></button></div>
+    <section class="history" id="historyPanel"><div class="section"><h3>往期快讯</h3><span>最近 3 期</span></div><div class="history-item" data-title="10月12日 · 工业具身智能进入工厂" data-html="<h5>今日值得关注</h5><p>西门子开放6类真实工厂场景，库卡发布开天KAI。</p><h5>技术进展</h5><p>工业Agent、多智能体调度与跨本体模型融合。</p><h5>智能制造与工业应用</h5><p>分拣、拆码垛、质检、包装进入整线协同。</p><h5>企业与政策动态</h5><p>平台化产品和智能工厂建模标准同步推进。</p><h5>对工业分拣产品的启示</h5><p>关注无序来料、异常恢复和MES/WMS接口。</p><h5>建议持续跟踪</h5><p>交付周期、连续运行时间、单箱节拍与复制案例。</p>" data-url="https://www.gongkong.com/news/202610/453774.html"><strong>10月12日 · 工业具身智能进入工厂</strong><span>查看 ›</span></div><div class="history-item" data-title="10月11日 · 柔性触觉与重载机器人" data-html="<h5>今日值得关注</h5><p>乐动机器人联合华中科技大学攻关柔性三维触觉。</p><h5>技术进展</h5><p>触觉成像、三维力解耦与重载轮式人形机器人加速验证。</p><h5>智能制造与工业应用</h5><p>料箱搬运、柔性转运和图纸解析进入产线。</p><h5>企业与政策动态</h5><p>工业Agent从问答走向排程、质量与履约协同。</p><h5>对工业分拣产品的启示</h5><p>视觉之外补充触觉和节拍优化能力。</p><h5>建议持续跟踪</h5><p>触觉传感器响应、部署周期与实际良率。</p>" data-url="https://www.cfi.net.cn/p20261011000341.html"><strong>10月11日 · 柔性触觉与重载机器人</strong><span>查看 ›</span></div><div class="history-item" data-title="10月10日 · 人形机器人量产新进展" data-html="<h5>今日值得关注</h5><p>多家厂商披露人形机器人量产和工厂试点进展。</p><h5>技术进展</h5><p>运动控制、视觉定位与灵巧操作持续迭代。</p><h5>智能制造与工业应用</h5><p>搬运、质检和柔性装配成为主要试点。</p><h5>企业与政策动态</h5><p>产业资本和地方试点项目继续增加。</p><h5>对工业分拣产品的启示</h5><p>产品需要支持多品种、小批量和快速换型。</p><h5>建议持续跟踪</h5><p>量产交付、客户复购和单位成本变化。</p>"><strong>10月10日 · 人形机器人量产新进展</strong><span>查看 ›</span></div><div class="detail" id="detail"><button class="close" id="closeDetail">关闭</button><h4 id="detailTitle"></h4><div id="detailText"></div><a id="detailLink" target="_blank" rel="noopener">打开原始报道 ↗</a></div></section>
+  </main><div class="toast" id="toast"></div>
+  <script>
+    const toast=(t)=>{const e=document.getElementById('toast');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2200)};
+    document.getElementById('readBtn').onclick=()=>document.querySelector('.story').scrollIntoView({behavior:'smooth'});
+    document.getElementById('shareBtn').onclick=async()=>{try{await navigator.share({title:'具身智能行业快讯',text:'今日精选：工业具身智能正在走向真实工厂。',url:location.href})}catch(e){toast('已复制快讯链接');navigator.clipboard?.writeText(location.href)}};
+    document.getElementById('notify').onclick=()=>toast('提醒已开启，每天 09:00 送达');
+    document.getElementById('history').onclick=()=>{const p=document.getElementById('historyPanel');p.classList.toggle('open');if(p.classList.contains('open'))p.scrollIntoView({behavior:'smooth'});}; document.querySelectorAll('.history-item').forEach(i=>i.onclick=()=>{detailTitle.textContent=i.dataset.title;detailText.innerHTML=i.dataset.html||'';detailLink.href=i.dataset.url||'#';detailLink.style.display=i.dataset.url?'inline-block':'none';detail.classList.add('open');detail.scrollIntoView({behavior:'smooth'});}); document.getElementById('closeDetail').onclick=()=>detail.classList.remove('open'); document.getElementById('settings').onclick=()=>toast('每日 09:00 · 北京时间');
+  </script>
+</body></html>
